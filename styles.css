@@ -1,0 +1,82 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+#colorBox {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border: 3px solid #000;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#colorOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-option {
+    width: 90px;
+    height: 45px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.2s;
+    border-radius: 5px;
+}
+
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+#gameStatus {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.correct {
+    animation: correctAnimation 0.5s ease-in-out;
+}
+
+.wrong {
+    animation: wrongAnimation 0.5s ease-in-out;
+}
+
+
+@keyframes correctAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrongAnimation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
+@media (max-width: 600px) {
+    #colorBox {
+        width: 100px;
+        height: 100px;
+    }
+
+    .color-option {
+        width: 70px;
+        height: 35px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
